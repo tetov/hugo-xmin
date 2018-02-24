@@ -1,4 +1,3 @@
-# From https://github.com/MunifTanjim/minimo
 {{- $defaultConfig := .Site.Data.config.default.widgets.taxonomy_cloud -}}
 {{- $configData := ( or .Site.Data.config.widgets.taxonomy_cloud $defaultConfig ) -}}
 {{- $lang := .Site.Language.Lang -}}
@@ -9,9 +8,9 @@
 {{- $taxonomyData := ( .Site.GetPage "taxonomy" $taxonomy ).Data -}}
 {{- $taxonomySingular := $taxonomyData.Singular -}}
 
-<section class='widget widget-taxonomy_cloud sep-after'>
+<section>
   <header>
-    <h4 class='title widget-title'>
+    <h4>
       {{- ( $config.title | default ( i18n $taxonomySingular 2 ) ) -}}
     </h4>
   </header>
