@@ -2,6 +2,10 @@
 
 <h1>{{ .Title }}</h1>
 
+{{- $shuffle := .Site.Params.settings.taxonomyCloudShuffle -}}
+{{- $taxonomy := .Data.Plural -}}
+{{ partial "extras/taxonomy_cloud" ( dict "Taxonomy" $taxonomy "Shuffle" $shuffle "Scope" . ) }}
+
 <ul class="terms">
   {{ range $key, $value := .Data.Terms }}
   <li>
